@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Repertório do ENEM — Redação Nota 900+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:     #0B1628;
+      --deep:     #0F1F3D;
+      --mid:      #162B52;
+      --accent:   #3B82F6;
+      --electric: #60A5FA;
+      --gold:     #F59E0B;
+      --lime:     #4ADE80;
+      --text:     #E2E8F0;
+      --muted:    #94A3B8;
+      --white:    #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4 { font-family: 'Sora', sans-serif; line-height: 1.15; }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      background: rgba(11,22,40,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(59,130,246,0.12);
+    }
+    .nav-logo {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--electric); }
+    .nav-cta {
+      background: var(--accent);
+      color: var(--white);
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 0.78rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover { background: var(--electric); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 7rem 1.5rem 4rem;
+      overflow: hidden;
+    }
+
+    /* Blueprint grid lines */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px; height: 600px;
+      top: -100px; right: -200px;
+      background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-glow-2 {
+      position: absolute;
+      width: 400px; height: 400px;
+      bottom: -100px; left: -100px;
+      background: radial-gradient(circle, rgba(96,165,250,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--electric);
+      margin-bottom: 1.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 7px; height: 7px;
+      background: var(--lime);
+      border-radius: 50%;
+      animation: pulse-dot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+    }
+    h1 .highlight {
+      background: linear-gradient(135deg, var(--electric), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.18rem);
+      color: var(--muted);
+      max-width: 540px;
+      margin: 0 auto 2.5rem;
+      font-weight: 400;
+    }
+
+    .hero-cta-group { display: flex; flex-direction: column; gap: 0.85rem; align-items: center; }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: var(--white);
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(37,211,102,0.45);
+    }
+    .btn-primary svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+    .hero-note { font-size: 0.8rem; color: var(--muted); }
+
+    /* ── SOCIAL PROOF STRIP ── */
+    .proof-strip {
+      position: relative;
+      z-index: 1;
+      background: rgba(22,43,82,0.6);
+      border-top: 1px solid rgba(59,130,246,0.12);
+      border-bottom: 1px solid rgba(59,130,246,0.12);
+      padding: 1.25rem 1.5rem;
+    }
+    .proof-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem 3rem;
+    }
+    .proof-item {
+      text-align: center;
+    }
+    .proof-num {
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--white);
+    }
+    .proof-num span { color: var(--electric); }
+    .proof-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
+
+    /* ── SECTIONS GENERAL ── */
+    section { position: relative; z-index: 1; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--electric);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+
+    .section-body {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 540px;
+    }
+
+    /* ── BENEFITS ── */
+    .benefits {
+      padding: 5rem 1.5rem;
+    }
+    .benefits-header { margin-bottom: 3rem; }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .benefit-card {
+      background: rgba(22,43,82,0.5);
+      border: 1px solid rgba(59,130,246,0.14);
+      border-radius: 14px;
+      padding: 1.5rem;
+      transition: border-color 0.25s, transform 0.25s, background 0.25s;
+    }
+    .benefit-card:hover {
+      border-color: rgba(59,130,246,0.4);
+      background: rgba(22,43,82,0.8);
+      transform: translateY(-3px);
+    }
+    .benefit-icon {
+      width: 44px; height: 44px;
+      background: rgba(59,130,246,0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .benefit-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .benefit-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── HOW IT WORKS ── */
+    .how {
+      padding: 5rem 1.5rem;
+      background: rgba(15,31,61,0.6);
+    }
+    .how-header { margin-bottom: 3rem; }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 560px;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .step-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--electric));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Sora', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    .step-line {
+      width: 2px;
+      flex: 1;
+      min-height: 40px;
+      background: linear-gradient(to bottom, rgba(59,130,246,0.4), rgba(59,130,246,0.05));
+      margin: 4px 0;
+    }
+
+    .step:last-child .step-line { display: none; }
+
+    .step-content {
+      padding-bottom: 2.5rem;
+    }
+
+    .step-title {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+    .step-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* ── RESULTS ── */
+    .results {
+      padding: 5rem 1.5rem;
+    }
+    .results-header { margin-bottom: 3rem; }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .result-card {
+      background: rgba(22,43,82,0.4);
+      border: 1px solid rgba(59,130,246,0.12);
+      border-radius: 14px;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      transition: all 0.25s;
+    }
+    .result-card:hover {
+      border-color: rgba(245,158,11,0.35);
+      background: rgba(22,43,82,0.7);
+    }
+    .result-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+    .result-text {
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--white);
+      line-height: 1.3;
+    }
+
+    /* ── TESTIMONIAL STRIP ── */
+    .testimonials {
+      padding: 4rem 1.5rem;
+      background: rgba(15,31,61,0.5);
+      overflow: hidden;
+    }
+
+    .testimonials-header { margin-bottom: 2rem; text-align: center; }
+    .testimonials-header .section-eyebrow { display: block; text-align: center; }
+
+    .testi-track {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .testi-track::-webkit-scrollbar { display: none; }
+
+    .testi-card {
+      min-width: 280px;
+      background: rgba(22,43,82,0.6);
+      border: 1px solid rgba(59,130,246,0.15);
+      border-radius: 14px;
+      padding: 1.25rem;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+    .testi-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+    .testi-quote { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin-bottom: 1rem; font-style: italic; }
+    .testi-author { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 6rem 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(59,130,246,0.12), transparent);
+      pointer-events: none;
+    }
+
+    .final-cta-inner { position: relative; z-index: 1; }
+
+    .cta-badge {
+      display: inline-block;
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.5rem;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.8rem, 5vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .final-cta h2 .highlight {
+      background: linear-gradient(135deg, var(--gold), #FBBF24);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .btn-final {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: var(--white);
+      font-family: 'Sora', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 1.1rem 2.2rem;
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 32px rgba(37,211,102,0.35), 0 0 0 0 rgba(37,211,102,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: cta-breathe 3s ease-in-out infinite;
+    }
+    .btn-final:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 40px rgba(37,211,102,0.5);
+      animation: none;
+    }
+    .btn-final svg { width: 24px; height: 24px; }
+
+    @keyframes cta-breathe {
+      0%, 100% { box-shadow: 0 4px 32px rgba(37,211,102,0.35), 0 0 0 0 rgba(37,211,102,0.4); }
+      50% { box-shadow: 0 4px 32px rgba(37,211,102,0.35), 0 0 0 12px rgba(37,211,102,0); }
+    }
+
+    .final-guarantee {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(59,130,246,0.1);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── FLOATING WHATSAPP ── */
+    .float-wa {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 200;
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      transition: transform 0.2s;
+      text-decoration: none;
+    }
+    .float-wa:hover { transform: scale(1.1); }
+    .float-wa svg { width: 28px; height: 28px; }
+
+    /* ── SCROLL ANIMATIONS ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero { padding-top: 5.5rem; }
+      .proof-inner { gap: 1rem 2rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Repertório<span> do ENEM</span></div>
+  <a class="nav-cta" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Tenho%20interesse%20em%20entrar%20no%20grupo%20Repert%C3%B3rio%20do%20ENEM." target="_blank" rel="noopener">Entrar no grupo</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Grupo exclusivo para o ENEM</div>
+    <h1>Tenha acesso a repertórios prontos para usar na <span class="highlight">redação do ENEM</span></h1>
+    <p class="hero-sub">Receba diariamente repertórios explicados, atualidades, referências históricas, filosóficas e sociológicas para enriquecer sua argumentação e aumentar sua nota.</p>
+    <div class="hero-cta-group">
+      <a class="btn-primary" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Tenho%20interesse%20em%20entrar%20no%20grupo%20Repert%C3%B3rio%20do%20ENEM." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.09 1.508 5.814L.057 23.286a.5.5 0 0 0 .611.64l5.652-1.48A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 0 1-5.034-1.388l-.36-.214-3.733.978.994-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+        Quero entrar no grupo
+      </a>
+      <span class="hero-note">Acesso pelo WhatsApp · Rápido e fácil</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div class="proof-item">
+      <div class="proof-num">+2<span>mil</span></div>
+      <div class="proof-label">alunos no grupo</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">365</div>
+      <div class="proof-label">dias de conteúdo</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">900<span>+</span></div>
+      <div class="proof-label">nota média alcançada</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-num">100<span>%</span></div>
+      <div class="proof-label">prático e aplicável</div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="container">
+    <div class="benefits-header fade-up">
+      <p class="section-eyebrow">Por que entrar</p>
+      <h2 class="section-title">Tudo que você precisa para a redação, num só lugar</h2>
+      <p class="section-body">Chega de perder horas garimpando referências na internet. Aqui o conteúdo chega até você, organizado e pronto para usar.</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">📚</div>
+        <div class="benefit-title">Repertórios explicados</div>
+        <div class="benefit-desc">Cada repertório vem com contexto, explicação e dica de como encaixar na redação. Sem decoreba, com entendimento.</div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">📅</div>
+        <div class="benefit-title">Conteúdo enviado diariamente</div>
+        <div class="benefit-desc">Todo dia um novo repertório na sua mão. Você constrói um acervo sólido sem nem perceber.</div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">🎯</div>
+        <div class="benefit-title">Foco nos temas do ENEM</div>
+        <div class="benefit-desc">Direitos humanos, cidadania, tecnologia, desigualdade — conteúdo alinhado ao que o ENEM realmente cobra.</div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">📰</div>
+        <div class="benefit-title">Atualidades como argumento</div>
+        <div class="benefit-desc">Transformamos notícias e fatos do mundo real em argumentos poderosos para sua redação.</div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">🗂️</div>
+        <div class="benefit-title">Material organizado</div>
+        <div class="benefit-desc">Zero enrolação. Conteúdo objetivo, bem estruturado e fácil de revisar na véspera da prova.</div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">⏱️</div>
+        <div class="benefit-title">Economize horas de pesquisa</div>
+        <div class="benefit-desc">O que levaria horas no Google chega mastigado para você. Mais tempo para praticar, menos para procurar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="container">
+    <div class="how-header fade-up">
+      <p class="section-eyebrow">Como funciona</p>
+      <h2 class="section-title">Três passos e você já está estudando</h2>
+    </div>
+    <div class="steps">
+      <div class="step fade-up">
+        <div class="step-left">
+          <div class="step-num">1</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Entre em contato pelo WhatsApp</div>
+          <div class="step-desc">Clique em qualquer botão desta página. Você será redirecionado direto para uma conversa com a gente.</div>
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-left">
+          <div class="step-num">2</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Receba as informações de acesso</div>
+          <div class="step-desc">Respondemos rapidamente com o link e todas as informações para você entrar no grupo.</div>
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-left">
+          <div class="step-num">3</div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <div class="step-title">Entre no grupo e comece a estudar</div>
+          <div class="step-desc">A partir daí é só aproveitar o conteúdo diário e ver sua argumentação evoluir a cada semana.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results">
+  <div class="container">
+    <div class="results-header fade-up">
+      <p class="section-eyebrow">O que você vai ganhar</p>
+      <h2 class="section-title">Resultados que aparecem na prova</h2>
+    </div>
+    <div class="results-grid">
+      <div class="result-card fade-up">
+        <div class="result-icon">🧠</div>
+        <div class="result-text">Mais repertório sociocultural</div>
+      </div>
+      <div class="result-card fade-up">
+        <div class="result-icon">✍️</div>
+        <div class="result-text">Argumentação mais sólida</div>
+      </div>
+      <div class="result-card fade-up">
+        <div class="result-icon">📝</div>
+        <div class="result-text">Maior facilidade para escrever redações</div>
+      </div>
+      <div class="result-card fade-up">
+        <div class="result-icon">💪</div>
+        <div class="result-text">Mais confiança na hora da prova</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="testimonials-header fade-up">
+      <span class="section-eyebrow">Depoimentos</span>
+      <h2 class="section-title" style="text-align:center; margin-top:0.5rem;">Quem entrou no grupo, evoluiu</h2>
+    </div>
+    <div class="testi-track">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"Depois que entrei no grupo, minha nota de redação foi de 720 para 880 em dois meses. Os repertórios chegam prontos e aplicáveis, é muito mais fácil escrever."</div>
+        <div class="testi-author">— Ana Paula M., estudante do 3º ano</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"Eu sempre travava na hora de usar referências filosóficas. Aqui aprendi a usar Rousseau e Foucault de um jeito simples e certeiro. Minha banca adorou."</div>
+        <div class="testi-author">— Lucas T., pré-vestibulando</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"O melhor é que o conteúdo é diário, então fui acumulando sem estresse. Quando chegou o ENEM eu tinha repertório para qualquer tema."</div>
+        <div class="testi-author">— Fernanda S., aprovada em Direito</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-quote">"Nunca pensei que ler repertório poderia ser interessante. O grupo explica o contexto de cada referência e isso faz toda a diferença na hora de aplicar."</div>
+        <div class="testi-author">— Rafael C., primeiro ano de faculdade</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner fade-up">
+    <div class="cta-badge">🎯 Vagas limitadas</div>
+    <h2>Comece hoje a construir sua <span class="highlight">redação nota 900+</span></h2>
+    <p>Não espere a prova chegar para começar a estudar repertório. Tenha acesso a conteúdos selecionados diariamente e esteja sempre preparado para qualquer tema.</p>
+    <a class="btn-final" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Tenho%20interesse%20em%20entrar%20no%20grupo%20Repert%C3%B3rio%20do%20ENEM." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.09 1.508 5.814L.057 23.286a.5.5 0 0 0 .611.64l5.652-1.48A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 0 1-5.034-1.388l-.36-.214-3.733.978.994-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+      Falar no WhatsApp
+    </a>
+    <div class="final-guarantee">Resposta rápida · Sem compromisso · Acesso imediato</div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Repertório do ENEM · Todos os direitos reservados
+</footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a class="float-wa" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Tenho%20interesse%20em%20entrar%20no%20grupo%20Repert%C3%B3rio%20do%20ENEM." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.09 1.508 5.814L.057 23.286a.5.5 0 0 0 .611.64l5.652-1.48A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 0 1-5.034-1.388l-.36-.214-3.733.978.994-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+</a>
+
+<script>
+  // Intersection Observer for fade-up animations
+  const els = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // Stagger sibling cards
+        const siblings = entry.target.parentElement.querySelectorAll('.fade-up');
+        let delay = 0;
+        siblings.forEach((sib, idx) => {
+          if (sib === entry.target) delay = idx * 80;
+        });
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  els.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
