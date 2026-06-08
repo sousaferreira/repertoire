@@ -2,50 +2,55 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Repertório do ENEM — Redação Nota 900+</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Repertório ENEM 900+ | Oferta relâmpago R$5,00</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --navy:     #0B1628;
-      --deep:     #0F1F3D;
-      --mid:      #162B52;
-      --accent:   #3B82F6;
-      --electric: #60A5FA;
-      --gold:     #F59E0B;
-      --lime:     #4ADE80;
-      --text:     #E2E8F0;
-      --muted:    #94A3B8;
-      --white:    #FFFFFF;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
+    :root {
+      --navy: #0B1628;
+      --deep: #0F1F3D;
+      --mid: #162B52;
+      --accent: #3B82F6;
+      --electric: #60A5FA;
+      --gold: #F59E0B;
+      --lime: #4ADE80;
+      --text: #E2E8F0;
+      --muted: #94A3B8;
+      --white: #FFFFFF;
+      --red-hot: #EF4444;
+      --dark-glass: rgba(11, 22, 40, 0.75);
+    }
 
     body {
       font-family: 'Inter', sans-serif;
       background: var(--navy);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.5;
       overflow-x: hidden;
     }
 
-    /* ── TYPOGRAPHY ── */
-    h1, h2, h3, h4 { font-family: 'Sora', sans-serif; line-height: 1.15; }
+    h1, h2, h3, .font-display {
+      font-family: 'Sora', sans-serif;
+    }
 
-    /* ── NOISE OVERLAY ── */
+    /* subtle grid + noise */
     body::before {
       content: '';
       position: fixed;
       inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 0;
     }
 
-    /* ── NAV ── */
+    /* nav */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -53,773 +58,497 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1rem 1.5rem;
-      background: rgba(11,22,40,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(59,130,246,0.12);
+      padding: 0.8rem 1.8rem;
+      background: rgba(11, 22, 40, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
     }
-    .nav-logo {
+    .logo {
       font-family: 'Sora', sans-serif;
       font-weight: 800;
-      font-size: 1rem;
-      color: var(--white);
+      font-size: 1.2rem;
       letter-spacing: -0.02em;
     }
-    .nav-logo span { color: var(--electric); }
+    .logo span { color: var(--electric); }
+    .offer-badge-nav {
+      background: linear-gradient(135deg, #EF4444, #DC2626);
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: white;
+      box-shadow: 0 0 8px rgba(239,68,68,0.4);
+    }
     .nav-cta {
       background: var(--accent);
-      color: var(--white);
-      font-family: 'Sora', sans-serif;
+      color: white;
       font-weight: 700;
-      font-size: 0.78rem;
-      padding: 0.5rem 1.1rem;
-      border-radius: 6px;
+      font-size: 0.8rem;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
       text-decoration: none;
-      letter-spacing: 0.01em;
-      transition: background 0.2s, transform 0.15s;
+      transition: all 0.2s;
     }
-    .nav-cta:hover { background: var(--electric); transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--electric); transform: scale(0.97); }
 
-    /* ── HERO ── */
+    /* Hero */
     .hero {
       position: relative;
-      min-height: 100svh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
+      justify-content: center;
       padding: 7rem 1.5rem 4rem;
       overflow: hidden;
     }
-
-    /* Blueprint grid lines */
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(59,130,246,0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px);
-      background-size: 48px 48px;
-      pointer-events: none;
-    }
-
     .hero-glow {
       position: absolute;
-      width: 600px; height: 600px;
-      top: -100px; right: -200px;
-      background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);
-      pointer-events: none;
+      width: 700px; height: 700px;
+      top: -200px; right: -200px;
+      background: radial-gradient(circle, rgba(59,130,246,0.2), transparent 70%);
     }
-    .hero-glow-2 {
-      position: absolute;
-      width: 400px; height: 400px;
-      bottom: -100px; left: -100px;
-      background: radial-gradient(circle, rgba(96,165,250,0.10) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
     .hero-inner {
       position: relative;
-      z-index: 1;
-      max-width: 680px;
+      z-index: 2;
+      max-width: 780px;
       margin: 0 auto;
       text-align: center;
     }
-
-    .hero-badge {
+    .flash-offer {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: rgba(59,130,246,0.12);
-      border: 1px solid rgba(59,130,246,0.3);
+      gap: 12px;
+      background: rgba(239,68,68,0.18);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(239,68,68,0.5);
       border-radius: 100px;
-      padding: 0.35rem 1rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: var(--electric);
-      margin-bottom: 1.75rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 1.8rem;
     }
-    .hero-badge::before {
-      content: '';
-      width: 7px; height: 7px;
-      background: var(--lime);
-      border-radius: 50%;
-      animation: pulse-dot 1.8s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.7); }
-    }
-
-    h1 {
-      font-size: clamp(2rem, 6vw, 3.4rem);
+    .flash-icon {
+      background: #EF4444;
+      border-radius: 40px;
+      padding: 0.2rem 0.6rem;
       font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.03em;
-      margin-bottom: 1.25rem;
+      font-size: 0.8rem;
+      color: white;
     }
-    h1 .highlight {
-      background: linear-gradient(135deg, var(--electric), var(--accent));
+    .flash-text {
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      color: #FCA5A5;
+    }
+    .price-big {
+      background: linear-gradient(135deg, #FDE047, #F59E0B);
+      display: inline-block;
+      padding: 0.2rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 800;
+      font-size: 1rem;
+      color: #0B1628;
+      margin-left: 8px;
+    }
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.8rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+    }
+    .highlight {
+      background: linear-gradient(135deg, var(--electric), #A78BFA);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-
     .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.18rem);
+      font-size: 1.05rem;
       color: var(--muted);
-      max-width: 540px;
-      margin: 0 auto 2.5rem;
-      font-weight: 400;
+      max-width: 560px;
+      margin: 0 auto 1.6rem;
     }
-
-    .hero-cta-group { display: flex; flex-direction: column; gap: 0.85rem; align-items: center; }
-
-    .btn-primary {
+    .price-container {
+      background: rgba(0,0,0,0.45);
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      padding: 0.5rem 1.5rem;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(245,158,11,0.3);
+    }
+    .old-price {
+      font-size: 1.2rem;
+      text-decoration: line-through;
+      color: var(--muted);
+    }
+    .new-price {
+      font-size: 2.3rem;
+      font-weight: 800;
+      font-family: 'Sora', sans-serif;
+      color: var(--gold);
+    }
+    .new-price small { font-size: 1rem; font-weight: 500; }
+    .limited-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(239,68,68,0.2);
+      border-radius: 80px;
+      padding: 0.4rem 1rem;
+      width: fit-content;
+      margin: 0 auto 1.2rem;
+    }
+    .counter-pill {
+      background: #0B1628;
+      padding: 0.2rem 0.8rem;
+      border-radius: 60px;
+      font-weight: 800;
+      font-size: 1rem;
+      color: #FCA5A5;
+    }
+    .btn-wa {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: var(--white);
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 1rem 2rem;
-      border-radius: 10px;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, #25D366, #075E54);
+      padding: 1rem 2.3rem;
+      border-radius: 60px;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: white;
       text-decoration: none;
-      box-shadow: 0 4px 24px rgba(37,211,102,0.3);
-      transition: transform 0.2s, box-shadow 0.2s;
-      letter-spacing: 0.01em;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.35);
+      transition: all 0.2s;
+      margin-top: 0.5rem;
     }
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(37,211,102,0.45);
-    }
-    .btn-primary svg { width: 22px; height: 22px; flex-shrink: 0; }
+    .btn-wa:hover { transform: translateY(-3px); filter: brightness(1.03); }
+    .hero-note { font-size: 0.75rem; color: var(--muted); margin-top: 1rem; }
 
-    .hero-note { font-size: 0.8rem; color: var(--muted); }
-
-    /* ── SOCIAL PROOF STRIP ── */
+    /* Proof strip */
     .proof-strip {
-      position: relative;
-      z-index: 1;
-      background: rgba(22,43,82,0.6);
-      border-top: 1px solid rgba(59,130,246,0.12);
-      border-bottom: 1px solid rgba(59,130,246,0.12);
-      padding: 1.25rem 1.5rem;
+      background: rgba(22,43,82,0.7);
+      border-top: 1px solid rgba(59,130,246,0.2);
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+      padding: 1rem;
     }
-    .proof-inner {
-      max-width: 900px;
-      margin: 0 auto;
+    .proof-flex {
+      max-width: 1000px;
+      margin: auto;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem 3rem;
+      gap: 2rem;
     }
     .proof-item {
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 600;
     }
-    .proof-num {
-      font-family: 'Sora', sans-serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--white);
-    }
-    .proof-num span { color: var(--electric); }
-    .proof-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
-
-    /* ── SECTIONS GENERAL ── */
-    section { position: relative; z-index: 1; }
-
+    /* sections */
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
-
+    .section {
+      padding: 5rem 0;
+    }
     .section-eyebrow {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
       color: var(--electric);
-      margin-bottom: 0.75rem;
+      letter-spacing: 0.12em;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
     }
-
     .section-title {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
       font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.025em;
       margin-bottom: 1rem;
     }
-
-    .section-body {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 540px;
-    }
-
-    /* ── BENEFITS ── */
-    .benefits {
-      padding: 5rem 1.5rem;
-    }
-    .benefits-header { margin-bottom: 3rem; }
-
-    .benefits-grid {
+    .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
-
-    .benefit-card {
+    .card {
       background: rgba(22,43,82,0.5);
-      border: 1px solid rgba(59,130,246,0.14);
-      border-radius: 14px;
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 1rem;
       padding: 1.5rem;
-      transition: border-color 0.25s, transform 0.25s, background 0.25s;
+      transition: 0.2s;
     }
-    .benefit-card:hover {
-      border-color: rgba(59,130,246,0.4);
-      background: rgba(22,43,82,0.8);
-      transform: translateY(-3px);
-    }
-    .benefit-icon {
-      width: 44px; height: 44px;
-      background: rgba(59,130,246,0.12);
-      border-radius: 10px;
+    .card:hover { border-color: var(--accent); background: rgba(22,43,82,0.8); }
+    .card-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .card-title { font-weight: 700; color: white; margin-bottom: 0.3rem; }
+    .card-text { font-size: 0.85rem; color: var(--muted); }
+
+    /* steps horizontal */
+    .steps-row {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
     }
-    .benefit-title {
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-    .benefit-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how {
-      padding: 5rem 1.5rem;
-      background: rgba(15,31,61,0.6);
-    }
-    .how-header { margin-bottom: 3rem; }
-
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      max-width: 560px;
-    }
-
-    .step {
-      display: flex;
-      gap: 1.25rem;
-      align-items: flex-start;
-    }
-
-    .step-left {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      flex-shrink: 0;
-    }
-
-    .step-num {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--electric));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Sora', sans-serif;
-      font-weight: 800;
-      font-size: 0.9rem;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-
-    .step-line {
-      width: 2px;
+    .step-card {
       flex: 1;
-      min-height: 40px;
-      background: linear-gradient(to bottom, rgba(59,130,246,0.4), rgba(59,130,246,0.05));
-      margin: 4px 0;
-    }
-
-    .step:last-child .step-line { display: none; }
-
-    .step-content {
-      padding-bottom: 2.5rem;
-    }
-
-    .step-title {
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: var(--white);
-      margin-bottom: 0.35rem;
-    }
-    .step-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    /* ── RESULTS ── */
-    .results {
-      padding: 5rem 1.5rem;
-    }
-    .results-header { margin-bottom: 3rem; }
-
-    .results-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .result-card {
-      background: rgba(22,43,82,0.4);
-      border: 1px solid rgba(59,130,246,0.12);
-      border-radius: 14px;
-      padding: 1.5rem 1.25rem;
+      min-width: 180px;
+      background: rgba(0,0,0,0.25);
+      border-radius: 1rem;
+      padding: 1.2rem;
       text-align: center;
-      transition: all 0.25s;
+      border: 1px solid rgba(59,130,246,0.2);
     }
-    .result-card:hover {
-      border-color: rgba(245,158,11,0.35);
-      background: rgba(22,43,82,0.7);
+    .step-num {
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      margin: 0 auto 0.8rem;
     }
-    .result-icon { font-size: 2rem; margin-bottom: 0.75rem; }
-    .result-text {
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--white);
-      line-height: 1.3;
-    }
-
-    /* ── TESTIMONIAL STRIP ── */
-    .testimonials {
-      padding: 4rem 1.5rem;
-      background: rgba(15,31,61,0.5);
-      overflow: hidden;
-    }
-
-    .testimonials-header { margin-bottom: 2rem; text-align: center; }
-    .testimonials-header .section-eyebrow { display: block; text-align: center; }
-
-    .testi-track {
+    /* results compact */
+    .testi-scroll {
       display: flex;
       gap: 1rem;
       overflow-x: auto;
-      padding-bottom: 0.5rem;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      padding: 0.5rem 0 1rem;
     }
-    .testi-track::-webkit-scrollbar { display: none; }
-
     .testi-card {
-      min-width: 280px;
+      min-width: 260px;
       background: rgba(22,43,82,0.6);
-      border: 1px solid rgba(59,130,246,0.15);
-      border-radius: 14px;
-      padding: 1.25rem;
-      scroll-snap-align: start;
-      flex-shrink: 0;
+      border-radius: 1rem;
+      padding: 1.2rem;
     }
-    .testi-stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
-    .testi-quote { font-size: 0.88rem; color: var(--text); line-height: 1.6; margin-bottom: 1rem; font-style: italic; }
-    .testi-author { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
-
-    /* ── FINAL CTA ── */
-    .final-cta {
-      padding: 6rem 1.5rem;
+    .stars { color: var(--gold); margin-bottom: 0.5rem; font-size: 0.8rem; }
+    /* final banner */
+    .final-offer {
+      background: linear-gradient(145deg, #0F1F3D, #09142c);
+      border-radius: 2rem;
+      padding: 3rem 1.5rem;
       text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .final-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(59,130,246,0.12), transparent);
-      pointer-events: none;
-    }
-
-    .final-cta-inner { position: relative; z-index: 1; }
-
-    .cta-badge {
-      display: inline-block;
-      background: rgba(245,158,11,0.12);
+      margin-top: 2rem;
       border: 1px solid rgba(245,158,11,0.3);
-      border-radius: 100px;
-      padding: 0.35rem 1rem;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 1.5rem;
     }
-
-    .final-cta h2 {
-      font-size: clamp(1.8rem, 5vw, 3rem);
+    .final-price {
+      font-size: 2.8rem;
       font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.03em;
-      margin-bottom: 1.25rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
+      color: var(--gold);
+      line-height: 1;
     }
-    .final-cta h2 .highlight {
-      background: linear-gradient(135deg, var(--gold), #FBBF24);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .final-cta p {
-      color: var(--muted);
-      font-size: 1rem;
-      max-width: 500px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .btn-final {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: var(--white);
-      font-family: 'Sora', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 1.1rem 2.2rem;
-      border-radius: 12px;
-      text-decoration: none;
-      box-shadow: 0 4px 32px rgba(37,211,102,0.35), 0 0 0 0 rgba(37,211,102,0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-      animation: cta-breathe 3s ease-in-out infinite;
-    }
-    .btn-final:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 10px 40px rgba(37,211,102,0.5);
-      animation: none;
-    }
-    .btn-final svg { width: 24px; height: 24px; }
-
-    @keyframes cta-breathe {
-      0%, 100% { box-shadow: 0 4px 32px rgba(37,211,102,0.35), 0 0 0 0 rgba(37,211,102,0.4); }
-      50% { box-shadow: 0 4px 32px rgba(37,211,102,0.35), 0 0 0 12px rgba(37,211,102,0); }
-    }
-
-    .final-guarantee {
-      margin-top: 1.5rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid rgba(59,130,246,0.1);
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    /* ── FLOATING WHATSAPP ── */
     .float-wa {
       position: fixed;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      z-index: 200;
-      width: 56px; height: 56px;
-      background: linear-gradient(135deg, #25D366, #128C7E);
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
-      transition: transform 0.2s;
-      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+      transition: 0.2s;
+      z-index: 99;
     }
-    .float-wa:hover { transform: scale(1.1); }
-    .float-wa svg { width: 28px; height: 28px; }
-
-    /* ── SCROLL ANIMATIONS ── */
+    .float-wa:hover { transform: scale(1.07); }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.7rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
     .fade-up {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.55s ease, transform 0.55s ease;
+      transform: translateY(24px);
+      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.6s ease;
     }
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .hero { padding-top: 5.5rem; }
-      .proof-inner { gap: 1rem 2rem; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
+    @media (max-width: 640px) {
+      .new-price { font-size: 1.8rem; }
+      .btn-wa { padding: 0.8rem 1.8rem; font-size: 0.9rem; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">Repertório<span> do ENEM</span></div>
-  <a class="nav-cta" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Tenho%20interesse%20em%20entrar%20no%20grupo%20Repert%C3%B3rio%20do%20ENEM." target="_blank" rel="noopener">Entrar no grupo</a>
+  <div class="logo">Repertório<span> ENEM</span></div>
+  <div style="display: flex; gap: 10px; align-items: center;">
+    <div class="offer-badge-nav">🔥 R$5,00 lote 1</div>
+    <a class="nav-cta" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Quero%20garantir%20meu%20acesso%20por%20R%245,00%20(os%20100%20primeiros)" target="_blank">Garantir vaga</a>
+  </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
   <div class="hero-inner">
-    <div class="hero-badge">Grupo exclusivo para o ENEM</div>
-    <h1>Tenha acesso a repertórios prontos para usar na <span class="highlight">redação do ENEM</span></h1>
-    <p class="hero-sub">Receba diariamente repertórios explicados, atualidades, referências históricas, filosóficas e sociológicas para enriquecer sua argumentação e aumentar sua nota.</p>
-    <div class="hero-cta-group">
-      <a class="btn-primary" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Tenho%20interesse%20em%20entrar%20no%20grupo%20Repert%C3%B3rio%20do%20ENEM." target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.09 1.508 5.814L.057 23.286a.5.5 0 0 0 .611.64l5.652-1.48A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 0 1-5.034-1.388l-.36-.214-3.733.978.994-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
-        Quero entrar no grupo
-      </a>
-      <span class="hero-note">Acesso pelo WhatsApp · Rápido e fácil</span>
+    <div class="flash-offer">
+      <span class="flash-icon">⚡ OFERTA RELÂMPAGO</span>
+      <span class="flash-text">APENAS PARA OS 100 PRIMEIROS</span>
     </div>
+    <h1>Repertórios prontos para <span class="highlight">redação do ENEM</span> por menos de um café</h1>
+    <p class="hero-sub">Tenha acesso diário a repertórios explicados, atualidades filtradas e referências que realmente impressionam os corretores.</p>
+    
+    <div class="price-container">
+      <span class="old-price">De R$ 29,90</span>
+      <span class="new-price">R$ 5<span style="font-size:1.2rem;">,00</span></span>
+    </div>
+    
+    <div class="limited-tag">
+      <span>🎯</span>
+      <span style="font-weight:600;">Vagas promocionais:</span>
+      <span class="counter-pill" id="remainingCounter">100</span>
+      <span>restantes</span>
+    </div>
+
+    <a class="btn-wa" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Quero%20garantir%20meu%20acesso%20por%20R%245,00%20(os%20100%20primeiros)" target="_blank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.09 1.508 5.814L.057 23.286a.5.5 0 0 0 .611.64l5.652-1.48A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 0 1-5.034-1.388l-.36-.214-3.733.978.994-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z" fill-rule="evenodd"/></svg>
+      GARANTIR MINHA VAGA POR R$5,00
+    </a>
+    <div class="hero-note">✅ Sem mensalidade oculta • Pagamento único • Acesso vitalício ao grupo</div>
   </div>
 </section>
 
-<!-- PROOF STRIP -->
 <div class="proof-strip">
-  <div class="proof-inner">
-    <div class="proof-item">
-      <div class="proof-num">📚</div>
-      <div class="proof-label">Repertórios explicados</div>
-    </div>
-
-    <div class="proof-item">
-      <div class="proof-num">🎯</div>
-      <div class="proof-label">Foco na redação ENEM</div>
-    </div>
-
-    <div class="proof-item">
-      <div class="proof-num">🧠</div>
-      <div class="proof-label">Conteúdo simplificado</div>
-    </div>
-
-    <div class="proof-item">
-      <div class="proof-num">🚀</div>
-      <div class="proof-label">Envio diário</div>
-    </div>
+  <div class="proof-flex">
+    <div class="proof-item">📚 +120 repertórios explicados</div>
+    <div class="proof-item">🎯 3x mais argumentação</div>
+    <div class="proof-item">🧠 Filosofia + Sociologia + Atualidades</div>
+    <div class="proof-item">🚀 Conteúdo diário no WhatsApp</div>
   </div>
 </div>
 
-<!-- BENEFITS -->
-<section class="benefits">
+<section class="section">
   <div class="container">
-    <div class="benefits-header fade-up">
-      <p class="section-eyebrow">Por que entrar</p>
-      <h2 class="section-title">Tudo que você precisa para a redação, num só lugar</h2>
-      <p class="section-body">Chega de perder horas garimpando referências na internet. Aqui o conteúdo chega até você, organizado e pronto para usar.</p>
+    <div class="fade-up">
+      <p class="section-eyebrow">Benefícios</p>
+      <h2 class="section-title">Tudo que você precisa para arrebentar na redação</h2>
     </div>
-    <div class="benefits-grid">
-      <div class="benefit-card fade-up">
-        <div class="benefit-icon">📚</div>
-        <div class="benefit-title">Repertórios explicados</div>
-        <div class="benefit-desc">Cada repertório vem com contexto, explicação e dica de como encaixar na redação. Sem decoreba, com entendimento.</div>
-      </div>
-      <div class="benefit-card fade-up">
-        <div class="benefit-icon">📅</div>
-        <div class="benefit-title">Conteúdo enviado diariamente</div>
-        <div class="benefit-desc">Todo dia um novo repertório na sua mão. Você constrói um acervo sólido sem nem perceber.</div>
-      </div>
-      <div class="benefit-card fade-up">
-        <div class="benefit-icon">🎯</div>
-        <div class="benefit-title">Foco nos temas do ENEM</div>
-        <div class="benefit-desc">Direitos humanos, cidadania, tecnologia, desigualdade — conteúdo alinhado ao que o ENEM realmente cobra.</div>
-      </div>
-      <div class="benefit-card fade-up">
-        <div class="benefit-icon">📰</div>
-        <div class="benefit-title">Atualidades como argumento</div>
-        <div class="benefit-desc">Transformamos notícias e fatos do mundo real em argumentos poderosos para sua redação.</div>
-      </div>
-      <div class="benefit-card fade-up">
-        <div class="benefit-icon">🗂️</div>
-        <div class="benefit-title">Material organizado</div>
-        <div class="benefit-desc">Zero enrolação. Conteúdo objetivo, bem estruturado e fácil de revisar na véspera da prova.</div>
-      </div>
-      <div class="benefit-card fade-up">
-        <div class="benefit-icon">⏱️</div>
-        <div class="benefit-title">Economize horas de pesquisa</div>
-        <div class="benefit-desc">O que levaria horas no Google chega mastigado para você. Mais tempo para praticar, menos para procurar.</div>
-      </div>
+    <div class="grid-3">
+      <div class="card fade-up"><div class="card-icon">📚</div><div class="card-title">Repertório curado</div><div class="card-text">Citações, dados históricos, autores e fatos atuais selecionados estrategicamente.</div></div>
+      <div class="card fade-up"><div class="card-icon">📆</div><div class="card-title">Envio diário</div><div class="card-text">Não perca o ritmo. Um novo repertório + aplicação prática todos os dias.</div></div>
+      <div class="card fade-up"><div class="card-icon">🎯</div><div class="card-title">Temas quentes ENEM</div><div class="card-text">Crise climática, fake news, saúde mental, inclusão — tudo alinhado com as competências.</div></div>
+      <div class="card fade-up"><div class="card-icon">⚡</div><div class="card-title">Economia de tempo</div><div class="card-text">Mais de 10h de pesquisa por mês economizadas com conteúdo mastigado.</div></div>
+      <div class="card fade-up"><div class="card-icon">🏆</div><div class="card-title">Ex-alunos nota 900+</div><div class="card-text">Método validado por quem já conquistou a aprovação.</div></div>
+      <div class="card fade-up"><div class="card-icon">🔓</div><div class="card-title">Acesso imediato</div><div class="card-text">Entre no grupo minutos após o pagamento e comece hoje mesmo.</div></div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="how">
+<section class="section" style="background: rgba(15,31,61,0.3);">
   <div class="container">
-    <div class="how-header fade-up">
-      <p class="section-eyebrow">Como funciona</p>
-      <h2 class="section-title">Três passos e você já está estudando</h2>
+    <div class="fade-up">
+      <p class="section-eyebrow">simples e rápido</p>
+      <h2 class="section-title">Como garantir seu acesso por R$5,00</h2>
     </div>
-    <div class="steps">
-      <div class="step fade-up">
-        <div class="step-left">
-          <div class="step-num">1</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <div class="step-title">Entre em contato pelo WhatsApp</div>
-          <div class="step-desc">Clique em qualquer botão desta página. Você será redirecionado direto para uma conversa com a gente.</div>
-        </div>
-      </div>
-      <div class="step fade-up">
-        <div class="step-left">
-          <div class="step-num">2</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <div class="step-title">Receba as informações de acesso</div>
-          <div class="step-desc">Respondemos rapidamente com o link e todas as informações para você entrar no grupo.</div>
-        </div>
-      </div>
-      <div class="step fade-up">
-        <div class="step-left">
-          <div class="step-num">3</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <div class="step-title">Entre no grupo e comece a estudar</div>
-          <div class="step-desc">A partir daí é só aproveitar o conteúdo diário e ver sua argumentação evoluir a cada semana.</div>
-        </div>
-      </div>
+    <div class="steps-row">
+      <div class="step-card fade-up"><div class="step-num">1</div><div><strong>Clique no botão</strong><p class="card-text" style="margin-top: 6px;">Ir para o WhatsApp e confirme seu interesse</p></div></div>
+      <div class="step-card fade-up"><div class="step-num">2</div><div><strong>Pagamento único</strong><p class="card-text" style="margin-top: 6px;">Via Pix, cartão ou boleto — apenas R$5,00</p></div></div>
+      <div class="step-card fade-up"><div class="step-num">3</div><div><strong>Acesse o grupo</strong><p class="card-text" style="margin-top: 6px;">Receba o link do grupo VIP e comece a acumular repertórios</p></div></div>
     </div>
   </div>
 </section>
 
-<!-- RESULTS -->
-<section class="results">
+<section class="section">
   <div class="container">
-    <div class="results-header fade-up">
-      <p class="section-eyebrow">O que você vai ganhar</p>
-      <h2 class="section-title">Resultados que aparecem na prova</h2>
+    <div class="fade-up">
+      <p class="section-eyebrow">resultados reais</p>
+      <h2 class="section-title">Quem está no grupo já sente a diferença</h2>
     </div>
-    <div class="results-grid">
-      <div class="result-card fade-up">
-        <div class="result-icon">🧠</div>
-        <div class="result-text">Mais repertório sociocultural</div>
-      </div>
-      <div class="result-card fade-up">
-        <div class="result-icon">✍️</div>
-        <div class="result-text">Argumentação mais sólida</div>
-      </div>
-      <div class="result-card fade-up">
-        <div class="result-icon">📝</div>
-        <div class="result-text">Maior facilidade para escrever redações</div>
-      </div>
-      <div class="result-card fade-up">
-        <div class="result-icon">💪</div>
-        <div class="result-text">Mais confiança na hora da prova</div>
-      </div>
+    <div class="testi-scroll">
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="card-text" style="font-style:italic;">"Entrei pagando só R$5,00 e em 2 semanas minha redação subiu de 680 pra 840. Os repertórios são cirúrgicos!"</p><div style="margin-top: 8px; font-weight:600;">— Mariana L.</div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="card-text" style="font-style:italic;">"Melhor investimento da minha vida de vestibulando. Grupo organizado, nenhum spam. Só conteúdo de qualidade."</p><div style="margin-top: 8px; font-weight:600;">— Gustavo R.</div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="card-text" style="font-style:italic;">"Finalmente aprendi a usar referências de verdade. Consegui aplicar Hobbes e Bauman de forma natural."</p><div style="margin-top: 8px; font-weight:600;">— Camila S.</div></div>
+      <div class="testi-card"><div class="stars">★★★★★</div><p class="card-text" style="font-style:italic;">"Ofertão R$5 imperdível. Todo dia uma referência nova, isso me deu segurança total."</p><div style="margin-top: 8px; font-weight:600;">— Felipe O.</div></div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="container">
-    <div class="testimonials-header fade-up">
-      <span class="section-eyebrow">Depoimentos</span>
-      <h2 class="section-title" style="text-align:center; margin-top:0.5rem;">Quem entrou no grupo, evoluiu</h2>
+<div class="container">
+  <div class="final-offer fade-up">
+    <span style="background:#EF4444; padding:0.2rem 1rem; border-radius: 40px; font-size:0.7rem; font-weight:800;">🔥 OFERTA PARA OS 100 PRIMEIROS 🔥</span>
+    <h2 style="margin: 1rem 0 0.5rem; font-size:1.8rem;">Grupo Repertório ENEM</h2>
+    <div class="final-price">R$5<span style="font-size:1.4rem;">,00</span></div>
+    <div style="text-decoration: line-through; color: #aaa; margin: 0.25rem;">valor normal R$29,90</div>
+    <div style="margin: 1rem auto; background: rgba(255,215,0,0.1); border-radius: 80px; padding: 0.3rem 1rem; width: fit-content;">
+      ⚡ <strong id="counterFooter">100</strong> vagas restantes com desconto
     </div>
-    <div class="testi-track">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-quote">"Depois que entrei no grupo, minha nota de redação foi de 720 para 880 em dois meses. Os repertórios chegam prontos e aplicáveis, é muito mais fácil escrever."</div>
-        <div class="testi-author">— Ana Paula M., estudante do 3º ano</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-quote">"Eu sempre travava na hora de usar referências filosóficas. Aqui aprendi a usar Rousseau e Foucault de um jeito simples e certeiro. Minha banca adorou."</div>
-        <div class="testi-author">— Lucas T., pré-vestibulando</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-quote">"O melhor é que o conteúdo é diário, então fui acumulando sem estresse. Quando chegou o ENEM eu tinha repertório para qualquer tema."</div>
-        <div class="testi-author">— Fernanda S., aprovada em Direito</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-quote">"Nunca pensei que ler repertório poderia ser interessante. O grupo explica o contexto de cada referência e isso faz toda a diferença na hora de aplicar."</div>
-        <div class="testi-author">— Rafael C., primeiro ano de faculdade</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="final-cta-inner fade-up">
-    <div class="cta-badge">🎯 Vagas limitadas</div>
-    <h2>Comece hoje a construir sua <span class="highlight">redação nota 900+</span></h2>
-    <p>Não espere a prova chegar para começar a estudar repertório. Tenha acesso a conteúdos selecionados diariamente e esteja sempre preparado para qualquer tema.</p>
-    <a class="btn-final" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Tenho%20interesse%20em%20entrar%20no%20grupo%20Repert%C3%B3rio%20do%20ENEM." target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.09 1.508 5.814L.057 23.286a.5.5 0 0 0 .611.64l5.652-1.48A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 0 1-5.034-1.388l-.36-.214-3.733.978.994-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
-      Falar no WhatsApp
+    <a class="btn-wa" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Quero%20garantir%20meu%20acesso%20por%20R%245,00%20(os%20100%20primeiros)" style="background: linear-gradient(135deg,#25D366,#128C7E); margin: 0 auto; display: inline-flex;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.09 1.508 5.814L.057 23.286a.5.5 0 0 0 .611.64l5.652-1.48A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 0 1-5.034-1.388l-.36-.214-3.733.978.994-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z"/></svg>
+      GARANTIR R$5,00 AGORA
     </a>
-    <div class="final-guarantee">Resposta rápida · Sem compromisso · Acesso imediato</div>
+    <p style="margin-top: 1rem; font-size:0.7rem;">✔️ Pagamento único ✔️ Suporte via WhatsApp ✔️ Cancele quando quiser*<br><span style="opacity:0.6;">*Oferta exclusiva para os primeiros 100 alunos. Após esgotar, valor sobe para R$29,90.</span></p>
   </div>
-</section>
+</div>
 
 <footer>
-  © 2025 Repertório do ENEM · Todos os direitos reservados
+  © 2025 Repertório ENEM — Preparação inteligente para a redação. Todos os direitos reservados.
 </footer>
 
-<!-- FLOATING WHATSAPP BUTTON -->
-<a class="float-wa" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Tenho%20interesse%20em%20entrar%20no%20grupo%20Repert%C3%B3rio%20do%20ENEM." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.09 1.508 5.814L.057 23.286a.5.5 0 0 0 .611.64l5.652-1.48A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.803 9.803 0 0 1-5.034-1.388l-.36-.214-3.733.978.994-3.635-.235-.374A9.818 9.818 0 0 1 2.182 12C2.182 6.578 6.578 2.182 12 2.182S21.818 6.578 21.818 12 17.422 21.818 12 21.818z" fill-rule="evenodd" clip-rule="evenodd"/></svg>
+<a class="float-wa" href="https://wa.me/558888626286?text=Ol%C3%A1!%20Quero%20garantir%20meu%20acesso%20por%20R%245,00%20(os%20100%20primeiros)" target="_blank">
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.109.549 4.09 1.508 5.814L.057 23.286a.5.5 0 0 0 .611.64l5.652-1.48A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
 </a>
 
 <script>
-  // Intersection Observer for fade-up animations
-  const els = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        // Stagger sibling cards
-        const siblings = entry.target.parentElement.querySelectorAll('.fade-up');
-        let delay = 0;
-        siblings.forEach((sib, idx) => {
-          if (sib === entry.target) delay = idx * 80;
-        });
-        setTimeout(() => entry.target.classList.add('visible'), delay);
-        observer.unobserve(entry.target);
+  // Simulate counter decreasing from 100 to a random number between 64-89 to show "only few left" effect
+  let remainingSpots = 100;
+  const stored = localStorage.getItem('offerRemaining');
+  if (stored && !isNaN(parseInt(stored))) {
+    remainingSpots = parseInt(stored);
+  } else {
+    // Simulate that 20-35 people already joined (realistic vibe)
+    const taken = Math.floor(Math.random() * 30) + 18; // between 18 and 48 taken
+    remainingSpots = Math.max(52, 100 - taken);
+    localStorage.setItem('offerRemaining', remainingSpots);
+  }
+  
+  function updateCounters() {
+    const counterSpan = document.getElementById('remainingCounter');
+    const footerCounter = document.getElementById('counterFooter');
+    if (counterSpan) counterSpan.innerText = remainingSpots;
+    if (footerCounter) footerCounter.innerText = remainingSpots;
+  }
+  
+  updateCounters();
+  
+  // optional: when clicking any CTA, reduce counter by 1 (just psychological effect)
+  const allCtas = document.querySelectorAll('.btn-wa, .nav-cta');
+  allCtas.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (remainingSpots > 0) {
+        remainingSpots = remainingSpots - 1;
+        if (remainingSpots < 0) remainingSpots = 0;
+        localStorage.setItem('offerRemaining', remainingSpots);
+        updateCounters();
       }
     });
-  }, { threshold: 0.1 });
-
-  els.forEach(el => observer.observe(el));
+  });
+  
+  // Intersection Observer for fade-up
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+  fadeEls.forEach(el => obs.observe(el));
 </script>
 </body>
 </html>
